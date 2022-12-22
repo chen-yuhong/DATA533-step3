@@ -1,31 +1,25 @@
-class sparkLance():
+import unittest
+import sys 
+sys.path.append("..") 
+from MDS_Big_Adventure.item.sparkLance import sparkLance
 
-    #initialize
-    def __init__(self, name, hp, po, status):
-        self.__name = name
-        self.__hp = hp
-        self.__po = po
-        self.__status = status
-
-    #multiply the health value to the player
-    def betaTransform(self, p):
-        try:
-            p.health = p.health*self.__hp
-        except Exception as ex:
-            print(ex)
-            print("Something is wrong with the player")
-
-    #multiply the power value to the player
-    def getSpacium(self, p):
-        try:
-            p.power = p.power*self.__po
-        except Exception as ex:
-            print(ex)
-            print("Something is wrong with the player")
-
-    #get the plot when sparklance is activated
-    def getplot(self):
-        return ["""
+class TestSparkLance(unittest.TestCase):
+    
+    @classmethod
+    def setUpClass(cls):
+        print("")
+    
+    def setUp(self):
+        self.s = sparkLance("sparkLance",20,30,0)
+        
+    def test_getstatus(self):
+        self.assertEqual(self.s.getstatus(),0)
+        self.assertNotEqual(self.s.getstatus(),1)
+        self.assertNotEqual(self.s.getstatus(),30)
+        self.assertNotEqual(self.s.getstatus(),2)
+        
+    def test_getplot(self):
+        self.assertEqual(self.s.getplot(),["""
                                           As soon as you touched the Spark Lance, it started glowing and immersed you in light.
                                           You were startled at first, but soon you felt something, something strange but familiar.
                                           It felt like those sunny afternoons, when you look out from the window, 
@@ -65,12 +59,32 @@ class sparkLance():
                                            person the same thing I told her at the first time. If that person came back again, 
                                            I should give this to them." 
                                            
-                                           The Tim Horton's staff handed the artifact to you"""]
+                                           The Tim Horton's staff handed the artifact to you"""])
+        self.assertNotEqual(self.s.getplot(),200)
+        self.assertNotEqual(self.s.getplot(),-1)
+        self.assertNotEqual(self.s.getplot(),100)
+        
+    def test_check(self):
+        self.s.check()
+        self.assertEqual(self.s.getstatus(), 1)
+    
+    def test_betaTransform(self):
+        class p():
+            def __init__(self, health):
+                self.health = health
+        self.p = p(10)
+        
+        self.s.betaTransform(self.p)
+        
+        self.assertEqual(self.p.health, 10*20)
+        self.s.betaTransform(10)
+        
+    def tearDown(self):
+        print("")
+        
+    @classmethod
+    def tearDownClass(cls):
+         print("")
+         
+    unittest.main(argv=[''], verbosity=2, exit=False)   
 
-    #add status
-    def check(self):
-        self.__status += 1
-
-    #return status
-    def getstatus(self):
-        return self.__status
