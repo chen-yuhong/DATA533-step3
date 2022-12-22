@@ -1,3 +1,3 @@
   language: python
   script:
-    - python my_suite.py
+    - python test/my_suite.py
