@@ -1,0 +1,10 @@
+Methods with exceptions:
+
+1. character.player.getMoney()
+2. character.player.pay() -user defined excpetion
+3. play.play()
+4. timhortons.checkStock()
+5. timhortons.sell()
+6. item.sparkLance.betaTransform()
+7. character.player.advance()
+8. character.player.retreat()
