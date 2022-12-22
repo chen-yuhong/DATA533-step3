@@ -1,6 +1,6 @@
 import unittest
-import sys 
-sys.path.append("..") 
+import sys
+sys.path.insert(0, sys.path[0][:-4])
 from MDS_Big_Adventure.character.alien import alien
 
 class TestAlien(unittest.TestCase):
