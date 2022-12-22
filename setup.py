@@ -8,5 +8,5 @@ setup(
     description="A small example package",
     url='https://github.com/chen-yuhong/DATA533-step3.git',
     author="Henry(Yiheng) Luo; Yuhong Chen",    
-    author_email="henryluo@student.ubc.ca; yuhong.chen@mytwu.ca"
+    author_email="henryluo@student.ubc.ca"
 )
