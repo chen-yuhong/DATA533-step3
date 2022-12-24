@@ -1,6 +1,6 @@
 # MDS BIG ADVENTURE DESCRIPTIONS [![Build Status](https://app.travis-ci.com/chen-yuhong/DATA533-step3.svg?branch=main)](https://app.travis-ci.com/chen-yuhong/DATA533-step3)
 ### MDS Big Adventure 
-### pypi link: https://pypi.org/project/MDS-big-advantrue/0.1/
+### pypi link: https://pypi.org/project/MDSBigAdventure/0.1/
 #### Description
 MDS Big Advanture is a text-based game in which the player fights aliens on each level of the science building, buy items from Tim Hortons to improve health and strength, while advancing to the MDS classroom. The story of the game happens on an ordinary day in the MDS program, the player finished the morning classes and went to Tim Hortons for lunch. Suddenly an alien invasion took place, and the science building is occupied with the player’s laptop still in the classroom. The player has to retrieve the laptop in order to submit assignments on time.
 
